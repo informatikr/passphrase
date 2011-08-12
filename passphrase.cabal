@@ -1,0 +1,41 @@
+name:           passphrase
+version:        0.1
+license:        BSD3
+license-file:   LICENSE
+category:       Cryptography
+copyright:      Copyright 2011 Falko Peters
+author:         Falko Peters <falko.peters@gmail.com>
+maintainer:     Falko Peters <falko.peters@gmail.com>
+stability:      experimental
+tested-with:    GHC == 6.12.3
+cabal-version:  >= 1.8
+homepage:       http://github.com/informatikr/passphrase
+bug-reports:    http://github.com/informatikr/passphrase/issues
+build-type:     Simple
+synopsis:       Human-friendly random passwords.
+description:    A library to randomly generate human-friendly passwords.
+
+extra-source-files:
+    README.markdown
+
+data-files:
+    words/*.words
+
+library
+    exposed-modules:
+        Crypto.Passphrase
+
+    other-modules:
+        Paths_passphrase
+
+    build-depends:
+        base == 4.*,
+        binary-strict == 0.4.*,
+        bytestring == 0.9.*,
+        entropy == 0.2
+
+    ghc-options: -Wall
+
+source-repository head
+    type:     git
+    location: http://github.com/informatikr/passphrase
